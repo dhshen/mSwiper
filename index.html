@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <title>mSwiper</title>
+    <style>
+        body{margin:0;padding:0;color:#fff;}
+        ul{margin:0;padding:0;}
+        li{list-style: none;}
+
+        .slide-swiper{position: relative;background:red;}
+        .slide-box{height:150px;width:100%;overflow:hidden;}
+        .slide{display:flex;height:100%;}
+        .slide li{flex:1;height:100%;text-align: center;line-height:150px;}
+        .slide-index{position:absolute;display:flex;height:5px;bottom:10px;left:50%;-webkit-transform: translateY(-50%);transform:translateX(-50%);z-index:30;}
+        .slide-index li{display: block;width:5px;height:5px;background: #E5E5E5;border-radius:50%;margin-right:5px;}
+        .slide-index li.current-slide{background-color:#0BC183;transition: background .3s;}
+        .slide-index li:last-child{margin:0;}
+    </style>
+</head>
+<body>
+    <div class="slide-swiper">
+        <div id="js_slide_box" class="slide-box">
+            <ul class="slide">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        </div>
+        <ul id="js_slide_index" class="slide-index"></ul>
+    </div>
+
+    <script src="swiper.js"></script>
+    <script>
+        new Swiper('js_slide_box','js_slide_index')
+    </script>
+</body>
+</html>
